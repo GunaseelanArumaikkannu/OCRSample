@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:id="@+id/topLayout"
+    android:keepScreenOn="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    tools:context=".OcrCaptureActivity"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.guna.ocrlibrary.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <com.guna.ocrlibrary.camera.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.guna.ocrlibrary.camera.CameraSourcePreview>
+
+    <ImageButton
+        android:padding="10dp"
+        android:tint="?attr/colorAccent"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:src="@drawable/ic_done_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="selectAll"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
