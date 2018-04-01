@@ -67,12 +67,10 @@ public class OCRCapture {
         }
     }
 
-    public String getTextFromUri(Uri imageUri, boolean shouldResizeImage, int reqWidth, int reqHeight) {
+    public String getTextFromUri(Uri imageUri) {
         if (imageUri != null) {
-            Bitmap bitmap = null;
-            if (shouldResizeImage) {
-                bitmap = Util.decodeSampledBitmapFromResource(getPath(imageUri), reqWidth, reqHeight);
-            } else {
+            Bitmap bitmap = Util.decodeSampledBitmapFromResource(getPath(imageUri), 500, 500);
+            if (bitmap == null) {
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), imageUri);
                 } catch (IOException e) {

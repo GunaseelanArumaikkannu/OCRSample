@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else if (requestCode == LOAD_IMAGE_RESULTS) {
                 Uri pickedImage = data.getData();
-                String text = OCRCapture.Builder(this).getTextFromUri(pickedImage, true, 450, 450);
+                String text = OCRCapture.Builder(this).getTextFromUri(pickedImage);
                 textView.setText(text);
             }
         }
