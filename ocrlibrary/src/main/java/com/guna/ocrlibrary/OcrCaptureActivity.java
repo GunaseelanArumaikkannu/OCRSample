@@ -35,6 +35,7 @@ import com.guna.ocrlibrary.camera.util.OcrDetectorProcessor;
 import com.guna.ocrlibrary.camera.util.OcrGraphic;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Set;
 
 /**
@@ -328,10 +329,12 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 
     public void selectAll(View view) {
         Set<OcrGraphic> graphic = mGraphicOverlay.getGraphic();
-        TextBlock text = null;
+        TextBlock text;
         if (graphic != null && graphic.size() > 0) {
+            OcrGraphic[] myGraphic = graphic.toArray(new OcrGraphic[graphic.size()]);
+            Arrays.sort(myGraphic);
             StringBuilder mText = new StringBuilder();
-            for (OcrGraphic mGraphic : graphic) {
+            for (OcrGraphic mGraphic : myGraphic) {
                 text = mGraphic.getTextBlock();
                 if (text != null && text.getValue() != null) {
                     if (mText.toString().equals("")) {

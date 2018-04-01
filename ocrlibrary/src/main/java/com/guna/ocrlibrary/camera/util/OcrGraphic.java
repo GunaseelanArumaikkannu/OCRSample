@@ -19,6 +19,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.support.annotation.NonNull;
 
 import com.google.android.gms.vision.text.Text;
 import com.google.android.gms.vision.text.TextBlock;
@@ -30,7 +31,7 @@ import java.util.List;
  * Graphic instance for rendering TextBlock position, size, and ID within an associated graphic
  * overlay view.
  */
-public class OcrGraphic extends GraphicOverlay.Graphic {
+public class OcrGraphic extends GraphicOverlay.Graphic implements Comparable<OcrGraphic> {
 
     private int mId;
 
@@ -76,6 +77,7 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
     /**
      * Checks whether a point is within the bounding box of this graphic.
      * The provided point should be relative to this graphic's containing overlay.
+     *
      * @param x An x parameter in the relative context of the canvas.
      * @param y A y parameter in the relative context of the canvas.
      * @return True if the provided point is contained within this graphic's bounding box.
@@ -113,10 +115,15 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
 
         // Break the text into multiple lines and draw each one according to its own bounding box.
         List<? extends Text> textComponents = text.getComponents();
-        for(Text currentText : textComponents) {
+        for (Text currentText : textComponents) {
             float left = translateX(currentText.getBoundingBox().left);
             float bottom = translateY(currentText.getBoundingBox().bottom);
             canvas.drawText(currentText.getValue(), left, bottom, sTextPaint);
         }
+    }
+
+    @Override
+    public int compareTo(@NonNull OcrGraphic o) {
+        return this.mText.getBoundingBox().bottom - o.mText.getBoundingBox().bottom;
     }
 }
