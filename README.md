@@ -1,5 +1,8 @@
 # OCRSample
 Simple example of extracting text from image, and scan for text using camera.
+
+# Description
+<a href='https://v4all123.blogspot.in/2018/03/simple-example-of-ocrreader-in-android.html'>Simple example of OCRReader in Android.</a>
 # Screenshot
 <img src="app/src/main/res/drawable/screenshot.png" height="400" alt="Screenshot"/> 
 
