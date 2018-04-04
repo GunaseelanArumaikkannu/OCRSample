@@ -4,7 +4,7 @@ Simple example of extracting text from image, and scan for text using camera.
 <img src="app/src/main/res/drawable/screenshot.png" height="400" alt="Screenshot"/> 
 
 # Play Store
-<a href='https://play.google.com/store/apps/details?id=com.guna.ocrreader&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_generic_rgb_wo_45.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=com.guna.ocrreader&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://developer.android.com/images/brand/en_generic_rgb_wo_45.png'/></a>
 
 # Getting Started
 
